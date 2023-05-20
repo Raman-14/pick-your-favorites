@@ -38,18 +38,23 @@ export class AppComponent {
     console.log(this.selecetdPercentage);
     this.selectedImage = this.imageCATData;
     this.refresh();
+    this.spinner='visual';
   }
   dog() {
     this.selecetdPercentage = Math.round(Math.random() * 100);
     console.log(this.selecetdPercentage);
     this.selectedImage = this.imageDOGData;
     this.refresh();
+    this.spinner='visual';
   }
   refresh() {
     setTimeout(() => {
       this.fetchCATImage();
       this.fetchDOGImage();
       this.selectedImage = '';
-    }, 4000);
+      this.spinner='hidden';
+    }, 3000);
   }
+  spinner='hidden';
+
 }
